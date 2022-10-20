@@ -2,5 +2,5 @@ module.exports = {
     'config': Path2D.resolve('config', 'sequelize.js'),
     'models-path': path.resolve('src', 'models'),
     'seeders-path': path.resolve('src', 'database', 'seeders'),
-    'migrattions-path': path.resolve('src', 'database', 'migrations')
+    'migrations-path': path.resolve('src', 'database', 'migrations')
 }

@@ -8,7 +8,6 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "@adminjs/express": "~4.0.1",
     "@adminjs/sequelize": "~2.1.0",
@@ -17,6 +16,7 @@
     "express": "~4.17.2",
     "express-formidable": "~1.2.0",
     "pg": "~8.7.1",
+    "pg-hstore": "^2.3.4",
     "sequelize": "~6.13.0"
   },
   "devDependencies": {
@@ -25,5 +25,14 @@
     "sequelize-cli": "~6.4.1",
     "ts-node-dev": "~1.1.8",
     "typescript": "~4.5.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lpparanhos/TransformaTec-Fullstack.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lpparanhos/TransformaTec-Fullstack/issues"
+  },
+  "homepage": "https://github.com/lpparanhos/TransformaTec-Fullstack#readme",
+  "description": ""
 }
