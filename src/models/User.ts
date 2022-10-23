@@ -4,7 +4,7 @@ import bcrypt from 'bcrypt'
 
 type CheckPasswordCallback = (err: Error | undefined, isSame: boolean) => void
 
-export interface UserAtributtes {
+export interface UserAttributes {
     id: number
     firstName: string
     lastName: string
@@ -16,13 +16,13 @@ export interface UserAtributtes {
 }
 
 export interface UserCreationAttributes
-    extends Optional<UserAtributtes, 'id'> { }
+    extends Optional<UserAttributes, 'id'> { }
 
-export interface UserInstance extends Model<UserAtributtes, UserCreationAttributes>, UserAtributtes {
+export interface UserInstance extends Model<UserAttributes, UserCreationAttributes>, UserAttributes {
     checkPassword: (password: string, callbackfn: CheckPasswordCallback) => void
 }
 
-export const User = sequelize.define<UserInstance, UserAtributtes>('users', {
+export const User = sequelize.define<UserInstance, UserAttributes>('users', {
     id: {
         allowNull: false,
         autoIncrement: true,
