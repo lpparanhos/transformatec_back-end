@@ -2,7 +2,6 @@ import { Course } from "../models"
 
 export const courseService = {
     findByIdWithEpisodes: async (id: string) => {
-
         const courseWithEpisodes = await Course.findByPk(id, {
             attributes: [
                 'id',
@@ -27,6 +26,7 @@ export const courseService = {
 
         return courseWithEpisodes
     },
+
     getRandomFeaturedCourses: async () => {
         const featuredCourses = await Course.findAll({
             attributes: ['id', 'name', 'synopsis', ['thumbnail_url', 'thumbnailUrl']],
@@ -34,8 +34,17 @@ export const courseService = {
                 featured: true
             }
         })
-
         const randomFeaturedCourses = featuredCourses.sort(() => 0.5 - Math.random())
+        
         return randomFeaturedCourses.slice(0, 3)
     },
+
+    getTopTenNewest: async () => {
+        const courses = await Course.findAll({
+            limit: 10,
+            order: [['created_at', 'DESC']]
+        })
+
+        return courses
+    }
 }
